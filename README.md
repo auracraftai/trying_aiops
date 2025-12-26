@@ -17,3 +17,4 @@ A lightweight, dependency-free YouTube-style UI you can open directly in a brows
 - Videos stream from the public Google test videos bucket; thumbnails use YouTube image CDN or picsum.photos.
 - To integrate the YouTube Data API, fetch results in `scripts/app.js` where `MOCK_VIDEOS` are used and map fields to the renderers.
 # trying_aiops
+# trying_aiops
