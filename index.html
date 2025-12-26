@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LiteTube</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶️</text></svg>">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand" onclick="location.href='index.html'">
+      <div class="logo">▶</div>
+      <div class="name">LiteTube</div>
+    </div>
+    <form class="search" id="searchForm">
+      <input id="searchInput" type="search" placeholder="Search" aria-label="Search" autocomplete="off" />
+      <button type="submit" aria-label="Search">🔍</button>
+    </form>
+    <div class="spacer"></div>
+  </header>
+
+  <main class="container">
+    <section id="feed" class="grid"></section>
+  </main>
+
+  <template id="cardTemplate">
+    <article class="card" role="button" tabindex="0">
+      <div class="thumb-wrap">
+        <img class="thumb" alt="" loading="lazy" />
+        <span class="duration"></span>
+      </div>
+      <div class="meta">
+        <div class="title"></div>
+        <div class="sub"> <span class="channel"></span> • <span class="views"></span> • <span class="age"></span> </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initHomePage();
+    });
+  </script>
+</body>
+</html>

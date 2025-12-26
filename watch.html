@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Watch - LiteTube</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶️</text></svg>">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand" onclick="location.href='index.html'">
+      <div class="logo">▶</div>
+      <div class="name">LiteTube</div>
+    </div>
+    <form class="search" id="searchForm">
+      <input id="searchInput" type="search" placeholder="Search" aria-label="Search" autocomplete="off" />
+      <button type="submit" aria-label="Search">🔍</button>
+    </form>
+    <div class="spacer"></div>
+  </header>
+
+  <main class="watch-layout">
+    <section class="player-col">
+      <div class="player-wrap">
+        <video id="videoPlayer" class="player" controls playsinline></video>
+      </div>
+      <h1 id="videoTitle" class="video-title"></h1>
+      <div class="video-sub">
+        <div class="left">
+          <div class="channel" id="videoChannel"></div>
+          <div class="subtext"><span id="videoViews"></span> • <span id="videoAge"></span></div>
+        </div>
+        <div class="actions">
+          <button id="likeBtn">👍 <span id="likeCount">0</span></button>
+          <button id="saveBtn">💾 Save</button>
+          <button id="shareBtn">🔗 Share</button>
+        </div>
+      </div>
+      <details class="description">
+        <summary>Description</summary>
+        <p id="videoDescription"></p>
+      </details>
+    </section>
+
+    <aside class="suggestions-col">
+      <section id="suggestions" class="stack"></section>
+    </aside>
+  </main>
+
+  <template id="suggestionTemplate">
+    <article class="suggestion" role="button" tabindex="0">
+      <img class="s-thumb" alt="" loading="lazy" />
+      <div class="s-meta">
+        <div class="s-title"></div>
+        <div class="s-sub"> <span class="s-channel"></span> • <span class="s-views"></span> </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initWatchPage();
+    });
+  </script>
+</body>
+</html>
